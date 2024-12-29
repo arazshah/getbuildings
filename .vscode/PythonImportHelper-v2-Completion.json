@@ -1,0 +1,114 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "Polygon",
+        "importPath": "shapely.geometry",
+        "description": "shapely.geometry",
+        "isExtraImport": true,
+        "detail": "shapely.geometry",
+        "documentation": {}
+    },
+    {
+        "label": "geopandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "geopandas",
+        "description": "geopandas",
+        "detail": "geopandas",
+        "documentation": {}
+    },
+    {
+        "label": "geometry",
+        "importPath": "shapely",
+        "description": "shapely",
+        "isExtraImport": true,
+        "detail": "shapely",
+        "documentation": {}
+    },
+    {
+        "label": "mercantile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mercantile",
+        "description": "mercantile",
+        "detail": "mercantile",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "find_packages",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "process_tiles",
+        "kind": 2,
+        "importPath": "getbuildings.main",
+        "description": "getbuildings.main",
+        "peekOfCode": "def process_tiles(shp, minx, miny, maxx, maxy, output_file):\n    if shp:\n        bbox = gpd.read_file(shp)\n        coords = bbox.iloc[0]['geometray'].exterior.coords.xy\n        points_list = list(zip(coords[0], coords[1]))\n        aoi = Polygon(points_list)\n    else:\n        aoi = Polygon([(minx, miny), (maxx, miny), (maxx, maxy), (minx, maxy)])\n    minx, miny, maxx, maxy = aoi.bounds\n    quad_keys = set()",
+        "detail": "getbuildings.main",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "getbuildings.main",
+        "description": "getbuildings.main",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(\n        description=\"Download and process building footprints from bounding box data.\")\n    parser.add_argument(\"--shp\", type=str,\n                        help=\"Path to input shapefile for AOI (optional if bounding box is provided)\", default=None)\n    parser.add_argument(\n        \"--minx\", type=float, help=\"Minimum X coordinate of bounding box\", default=None)\n    parser.add_argument(\n        \"--miny\", type=float, help=\"Minimum Y coordinate of bounding box\", default=None)\n    parser.add_argument(",
+        "detail": "getbuildings.main",
+        "documentation": {}
+    }
+]
